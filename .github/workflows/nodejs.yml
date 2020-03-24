@@ -9,18 +9,18 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x]
+        node-version: [12.x]
 
     steps:
+    - name: debug - title
+      run: echo ${{ github.event.pull_request.title }}
+    - name: debug - user
+      run: echo ${{ github.event.pull_request.user }}
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: debug - title
-      run: echo ${{ github.event.pull_request.title }}
-    - name: debug - user
-      run: echo ${{ github.event.pull_request.user }}
     - name: npm install, build, and test
       run: |
         npm install
