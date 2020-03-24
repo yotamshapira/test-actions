@@ -17,6 +17,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: debug - title
+      run: echo ${{ github.event.pull_request.title }}
+    - name: debug - user
+      run: echo ${{ github.event.pull_request.user }}
     - name: npm install, build, and test
       run: |
         npm install
