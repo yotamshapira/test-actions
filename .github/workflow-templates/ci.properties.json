@@ -1,0 +1,10 @@
+{
+    "name": "Organization Workflow",
+    "description": "Organization CI workflow template.",
+    "iconName": "example-icon",
+    "categories": [
+        "Test",
+        "Organization",
+        "CI"
+    ]
+}
